@@ -1,5 +1,5 @@
 {
-    "name": "kaiyulee/phprpc",
+    "name": "kaiyulee/swoole-thrift-lib for kaiyulee/phprpc",
     "description": "The PHP RPC Framework",
     "keywords": ["framework"],
     "license": "MIT",
