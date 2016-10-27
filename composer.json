@@ -1,9 +1,10 @@
 {
     "name": "kaiyulee/swoole-thrift-lib",
     "description": "The PHP RPC Framework",
-    "keywords": ["framework"],
+    "keywords": ["framework","swoole","thrift"],
     "license": "MIT",
     "homepage": "http://小强.中国",
+    "minimum-stability": "stable",
     "support": {},
     "authors": [
         {
