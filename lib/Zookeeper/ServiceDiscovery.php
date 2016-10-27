@@ -7,16 +7,23 @@ use ZK\ZK;
 /**
 * service discovery
 */
-class ServiceDiscovery extends ZK
+class ServiceDiscovery
 {
-    
-    function __construct()
+    public static $zk;
+
+    public function __construct(ZK $zk)
     {
-        # code...
+        self::$zk = $zk;
     }
 
-    public function discovery($service_name)
+    public function discover($service_node)
     {
-        # code...
+        $val = self::$zk->get($service_node);
+
+        if (empty($val)) {
+            return null;
+        }
+
+        return $val;
     }
 }
