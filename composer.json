@@ -4,7 +4,7 @@
     "keywords": ["framework","swoole","thrift"],
     "license": "MIT",
     "homepage": "http://小强.中国",
-    "minimum-stability": "dev-master",
+    "minimum-stability": "dev",
     "support": {},
     "authors": [
         {
