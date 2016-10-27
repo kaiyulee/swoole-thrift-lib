@@ -5,7 +5,7 @@
     "license": "MIT",
     "homepage": "http://小强.中国",
     "minimum-stability": "stable",
-    "support": {},
+    "type": "library",
     "authors": [
         {
             "name": "Kaiyulee",
