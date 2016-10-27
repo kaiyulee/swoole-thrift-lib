@@ -8,6 +8,8 @@ namespace Swoole\Thrift {
     use Thrift;
     use Thrift\Server\TNonblockingServer;
     use Helper\Fn;
+    use ZK\ZK;
+    use ZK\ServiceRegistry;
 
     class Server extends TNonblockingServer
     {
@@ -47,6 +49,11 @@ namespace Swoole\Thrift {
             }
         }
 
+        public function onClose($serv, $fd, $from_id)
+        {
+            //
+        }
+
         function serve()
         {
             $host = Fn::C('service.host');
@@ -55,6 +62,7 @@ namespace Swoole\Thrift {
             $serv = new \swoole_server($host, $port);
             $serv->on('workerStart', [$this, 'onStart']);
             $serv->on('receive', [$this, 'onReceive']);
+            $serv->on('close', [$this, 'onClose']);
             $serv->set(array(
                 'worker_num'            => 1,
                 'dispatch_mode'         => 1, //1: 轮循, 3: 争抢
@@ -64,6 +72,7 @@ namespace Swoole\Thrift {
                 'package_length_offset' => 0,   //第N个字节是包长度的值
                 'package_body_offset'   => 4,   //从第几个字节计算长度
             ));
+
             $serv->start();
         }
     }

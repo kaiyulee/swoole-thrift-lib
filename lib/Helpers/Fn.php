@@ -72,7 +72,7 @@ class Fn
 
         $logger = new Logger($channel ? $channel : 'default_logger');
 
-        $log_path = C('log_path');
+        $log_path = static::C('log_path');
         $log_path .= strtolower(SERVICE) . '/';
         $log_name = date('Y.m.d') . '.log';
         $log_file = $log_path . $log_name;
