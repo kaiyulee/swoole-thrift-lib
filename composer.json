@@ -1,0 +1,29 @@
+{
+    "name": "kaiyulee/phprpc",
+    "description": "The PHP RPC Framework",
+    "keywords": ["framework"],
+    "license": "MIT",
+    "homepage": "http://小强.中国",
+    "support": {},
+    "authors": [
+        {
+            "name": "Kaiyulee",
+            "email": "sky.craper@foxmail.com"
+        }
+    ],
+    "require": {
+        "monolog/monolog": "^1.18",
+        "doctrine/orm": "^2.5",
+        "symfony/filesystem": "^3.0",
+        "kaiyulee/thrift-lib-php": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "ZK\\": "lib/Zookeeper",
+            "DB\\": "lib/Db",
+            "Swoole\\": "lib/Swoole",
+            "Http\\": "lib/Http",
+            "Helper\\": "lib/Helpers"
+        }
+    }
+}
