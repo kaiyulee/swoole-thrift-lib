@@ -1,1 +1,1 @@
-# The PHP RPC Framework, base on Swoole and Thrift
+# A composer package for phprpc
