@@ -8,6 +8,7 @@ namespace Swoole\Thrift {
     use Thrift;
     use Thrift\Server\TNonblockingServer;
     use Helper\Fn;
+    use Container\Container;
     use ZK\ZK;
     use ZK\ServiceRegistry;
 
@@ -51,7 +52,10 @@ namespace Swoole\Thrift {
 
         public function onClose($serv, $fd, $from_id)
         {
-            //
+            // de-register the zookeeper node for this service;
+            $node = Fn::C('service.zk_node');
+            ServiceRegistry::deregister($node);
+
         }
 
         function serve()

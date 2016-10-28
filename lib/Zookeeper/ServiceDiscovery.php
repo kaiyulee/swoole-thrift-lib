@@ -2,8 +2,6 @@
 
 namespace ZK;
 
-use ZK\ZK;
-
 /**
 * service discovery
 */
@@ -11,12 +9,12 @@ class ServiceDiscovery
 {
     public static $zk;
 
-    public function __construct(ZK $zk)
+    public static function setServer($zk)
     {
         self::$zk = $zk;
     }
 
-    public function discover($service_node)
+    public static function discover($service_node)
     {
         $val = self::$zk->get($service_node);
 

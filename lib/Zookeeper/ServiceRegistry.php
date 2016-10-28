@@ -2,6 +2,7 @@
 
 namespace ZK;
 
+use Container\Container;
 use ZK\Service;
 use ZK\ZK;
 
@@ -14,7 +15,17 @@ class ServiceRegistry
     private static $services = [];
     protected static $zk;
 
-    public function __construct(ZK $zk)
+    private function __construct()
+    {
+        #
+    }
+
+    public static function withSharedServer($name)
+    {
+        self::$zk = Container::get($name);
+    }
+
+    public static function setServer(ZK $zk)
     {
         self::$zk = $zk;
     }

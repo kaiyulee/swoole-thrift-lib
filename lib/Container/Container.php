@@ -8,18 +8,18 @@ class Container
 
     protected static $instances = [];
 
-    public static function getInstance()
+    private function __construct()
     {
-        return static::$instance;
+        //
     }
 
-    public static function bind($name, $zk)
+    public static function set($name, $concrete)
     {
-        static::$instances[$name] = $zk;
+        static::$instances[$name] = $concrete;
     }
 
-    public function unbind()
+    public static function get($name)
     {
-
+        return static::$instances[$name];
     }
 }
